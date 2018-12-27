@@ -17,3 +17,14 @@ class Solution:
         :type target: int
         :rtype: List[int]
         """
+        for i in nums[:-1]:
+            i_index = nums.index(i)
+            numsp = nums[i_index+1:]
+            
+            for j in numsp:
+                if i + j == target:
+                    return [nums.index(i), numsp.index(j)+i_index+1]
+                
+# Success
+# Details 
+# Runtime: 5316 ms, faster than 10.85% of Python3 online submissions for Two Sum.
