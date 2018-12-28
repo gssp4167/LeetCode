@@ -17,21 +17,29 @@
 # Assume we are dealing with an environment which could only store integers within the 32-bit signed integer range: 
 # [−231,  231 − 1]. For the purpose of this problem, assume that your function returns 0 when the reversed integer overflows.
 
-def reverse(x):
-    """
-    :type x: int
-    :rtype: int
-    """
-    x_abs = abs(x)
-    q = x_abs//10
-    r = x%10
+class Solution:
+    def reverse(self, x):
+        """
+        :type x: int
+        :rtype: int
+        """
+        x_abs = abs(x)
+        r = x_abs % 10
+        q = x_abs // 10
+        ans = r
 
-    if q != 0 and r != 0:
-        ans = r 
+        while q != 0:
+            r = q % 10
+            q //= 10
+            ans = ans * 10 + r
 
-
-
-
-
-    if x not in range(-2**31, 2**31-1):
-        return 0
+        if ans not in range(-2**31, 2**31-1):
+            return 0
+        elif x < 0:
+            return -ans
+        else:
+            return ans
+        
+# Success
+# Details 
+# Runtime: 84 ms, faster than 32.33% of Python3 online submissions for Reverse Integer.   
