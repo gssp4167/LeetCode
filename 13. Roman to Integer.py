@@ -41,3 +41,54 @@
 # Input: "MCMXCIV"
 # Output: 1994
 # Explanation: M = 1000, CM = 900, XC = 90 and IV = 4.
+
+from enum import Enum
+
+class Roman(Enum):
+    I = 1
+    V = 5
+    X = 10
+    L = 50
+    C = 100
+    D = 500
+    M = 1000
+    
+class Solution:
+    def romanToInt(self, s):
+        """
+        :type s: str
+        :rtype: int
+        """
+        s_list = []
+
+        for letter in s:
+            if letter == 'I':
+                s_list.append(Roman.I)
+            elif letter == 'V':
+                s_list.append(Roman.V)
+            elif letter == 'X':
+                s_list.append(Roman.X)
+            elif letter == 'L':
+                s_list.append(Roman.L)
+            elif letter == 'C':
+                s_list.append(Roman.C)
+            elif letter == 'D':
+                s_list.append(Roman.D)
+            else:
+                s_list.append(Roman.M)
+
+        s_reverse = s_list[::-1]
+        s_length = len(s_reverse)
+        ans = s_reverse[0].value
+
+        for i in range(1, s_length):
+            if s_reverse[i].value < s_reverse[i-1].value:
+                ans -= s_reverse[i].value
+            else:
+                ans += s_reverse[i].value
+
+        return ans
+      
+# Success
+# Details 
+# Runtime: 268 ms, faster than 15.61% of Python3 online submissions for Roman to Integer.  
