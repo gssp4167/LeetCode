@@ -15,3 +15,30 @@
 
 # Note:
 # All given inputs are in lowercase letters a-z.
+
+class Solution:
+    def longestCommonPrefix(self, strs):
+        """
+        :type strs: List[str]
+        :rtype: str
+        """
+        if strs == []:
+            return ""
+        else:
+            length = len(strs)
+            min_length = len(min(strs, key=len))
+            ans = ""
+    
+            for i in range(min_length):
+                ans_temp = strs[0][i]
+                for j in range(length):
+                    if ans_temp != strs[j][i]:
+                        return ans
+    
+                ans += ans_temp
+    
+            return ans
+    
+# Success
+# Details 
+# Runtime: 56 ms, faster than 39.90% of Python3 online submissions for Longest Common Prefix.  
