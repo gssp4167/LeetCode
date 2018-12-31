@@ -24,6 +24,7 @@ class Solution:
         """
         if strs == []:
             return ""
+        
         else:
             length = len(strs)
             min_length = len(min(strs, key=len))
@@ -31,6 +32,7 @@ class Solution:
     
             for i in range(min_length):
                 ans_temp = strs[0][i]
+                
                 for j in range(length):
                     if ans_temp != strs[j][i]:
                         return ans
