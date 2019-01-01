@@ -26,3 +26,47 @@
 # Example 5:
 # Input: "{[]}"
 # Output: true
+
+def isValid(s):
+    """
+    :type s: str
+    :rtype: bool
+    """
+    l = list(s)
+    length = len(l)
+    if length == 1:
+        return False
+    else:
+
+        while l != []:
+            if l[0] == '(':
+                compare = ')'
+            elif l[0] == '[':
+                compare = ']'
+            else:
+                compare = '}'
+
+            for i in range(1, length, 2):
+                if compare == l[i]:
+                    del l[0], l[i-1]
+                    length = len(l)
+                    break
+            else:
+                return False
+        return True
+
+s1 = "()"
+s2 = "()[]{}"
+s3 = "(]"
+s4 = "([)]"
+s5 = "{[]}"
+s6 = "([]"
+s7 = "[([]])"
+
+# print(isValid(s1))
+# print(isValid(s2))
+# print(isValid(s3))
+# print(isValid(s4))
+# print(isValid(s5))
+# print(isValid(s6))
+print(isValid(s7))
