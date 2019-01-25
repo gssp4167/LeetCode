@@ -70,3 +70,31 @@ s7 = "[([]])"
 # print(isValid(s5))
 # print(isValid(s6))
 print(isValid(s7))
+
+def isValid(s):
+    """
+    :type s: str
+    :rtype: bool
+    """
+    l = list(s)
+    length = len(l)
+    if length % 2 != 0:
+        return False
+    else:
+        while length != 0:
+            mid_po = length // 2 - 1
+
+            if l[mid_po] == '(':
+                compare = ')'
+            elif l[mid_po] == '[':
+                compare = ']'
+            else:
+                compare = '}'
+
+            if l[mid_po+1] == compare:
+                del l[mid_po], l[mid_po]
+                length = len(l)
+            else:
+                return False
+        return True
+
