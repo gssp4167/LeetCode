@@ -27,74 +27,63 @@
 # Input: "{[]}"
 # Output: true
 
-def isValid(s):
-    """
-    :type s: str
-    :rtype: bool
-    """
-    l = list(s)
-    length = len(l)
-    if length == 1:
-        return False
-    else:
+class Solution(object):
+    def isValid(self, s):
+        """
+        :type s: str
+        :rtype: bool
+        """
+        lo = list(s)
+        li = list(enumerate(lo))
+        length = len(lo)
+        if length % 2 != 0:
+            return False
 
-        while l != []:
-            if l[0] == '(':
-                compare = ')'
-            elif l[0] == '[':
-                compare = ']'
-            else:
-                compare = '}'
-
-            for i in range(1, length, 2):
-                if compare == l[i]:
-                    del l[0], l[i-1]
-                    length = len(l)
+        while li != []:
+            for item in li:
+                if item[1] == ')':
+                    compare = '('
+                    index = item[0] - 1
                     break
-            else:
+                elif item[1] == ']':
+                    compare = '['
+                    index = item[0] - 1
+                    break
+                elif item[1] == '}':
+                    compare = '{'
+                    index = item[0] - 1
+                    break
+                elif item[0] == len(li)-1:
+                    return False
+
+            if li[index][1] != compare:
                 return False
-        return True
-
-s1 = "()"
-s2 = "()[]{}"
-s3 = "(]"
-s4 = "([)]"
-s5 = "{[]}"
-s6 = "([]"
-s7 = "[([]])"
-
-# print(isValid(s1))
-# print(isValid(s2))
-# print(isValid(s3))
-# print(isValid(s4))
-# print(isValid(s5))
-# print(isValid(s6))
-print(isValid(s7))
-
-def isValid(s):
-    """
-    :type s: str
-    :rtype: bool
-    """
-    l = list(s)
-    length = len(l)
-    if length % 2 != 0:
-        return False
-    else:
-        while length != 0:
-            mid_po = length // 2 - 1
-
-            if l[mid_po] == '(':
-                compare = ')'
-            elif l[mid_po] == '[':
-                compare = ']'
             else:
-                compare = '}'
+                del lo[index], lo[index]
+                li = list(enumerate(lo))
 
-            if l[mid_po+1] == compare:
-                del l[mid_po], l[mid_po]
-                length = len(l)
-            else:
-                return False
         return True
+    
+    s1 = "()"  #T
+s2 = "()[]{}"  #T
+s3 = "(]"  #F
+s4 = "([)]"  #F
+s5 = "{[]}"  #T
+s6 = "([]"  #F
+s7 = "[([]])"  #F
+s8 = "(("  #F
+s9 = "()"  #T
 
+print('s1', isValid(s1))
+print('s2', isValid(s2))
+print('s3', isValid(s3))
+print('s4', isValid(s4))
+print('s5', isValid(s5))
+print('s6', isValid(s6))
+print('s7', isValid(s7))
+print('s8', isValid(s8))
+print('s9', isValid(s9))
+
+# Success
+# Details 
+# Runtime: 2812 ms, faster than 0.85% of Python online submissions for Valid Parentheses.
