@@ -64,7 +64,7 @@ class Solution(object):
 
         return True
     
-    s1 = "()"  #T
+s1 = "()"  #T
 s2 = "()[]{}"  #T
 s3 = "(]"  #F
 s4 = "([)]"  #F
