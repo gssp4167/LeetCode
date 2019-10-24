@@ -1,6 +1,5 @@
 // Easy
 
-
 // Reverse a singly linked list.
 
 // Example:
