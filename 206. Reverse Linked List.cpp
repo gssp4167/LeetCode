@@ -1,15 +1,15 @@
-Easy
+// Easy
 
 
-Reverse a singly linked list.
+// Reverse a singly linked list.
 
-Example:
+// Example:
 
-Input: 1->2->3->4->5->NULL
-Output: 5->4->3->2->1->NULL
-Follow up:
+// Input: 1->2->3->4->5->NULL
+// Output: 5->4->3->2->1->NULL
+// Follow up:
 
-A linked list can be reversed either iteratively or recursively. Could you implement both?
+// A linked list can be reversed either iteratively or recursively. Could you implement both?
 
 /**
  * Definition for singly-linked list.
@@ -43,7 +43,7 @@ public:
     }
 };
 
-Success
-Details 
-Runtime: 16 ms, faster than 5.19% of C++ online submissions for Reverse Linked List.
-Memory Usage: 9.3 MB, less than 71.76% of C++ online submissions for Reverse Linked List.
+// Success
+// Details 
+// Runtime: 16 ms, faster than 5.19% of C++ online submissions for Reverse Linked List.
+// Memory Usage: 9.3 MB, less than 71.76% of C++ online submissions for Reverse Linked List.
