@@ -1,17 +1,16 @@
-Easy
+// Easy
+// Given a singly linked list, determine if it is a palindrome.
 
-Given a singly linked list, determine if it is a palindrome.
+// Example 1:
 
-Example 1:
+// Input: 1->2
+// Output: false
+// Example 2:
 
-Input: 1->2
-Output: false
-Example 2:
-
-Input: 1->2->2->1
-Output: true
-Follow up:
-Could you do it in O(n) time and O(1) space?
+// Input: 1->2->2->1
+// Output: true
+// Follow up:
+// Could you do it in O(n) time and O(1) space?
 
 /**
  * Definition for singly-linked list.
@@ -64,8 +63,7 @@ public:
     }
 };
 
-Success
-
-Details 
-Runtime: 20 ms, faster than 92.44% of C++ online submissions for Palindrome Linked List.
-Memory Usage: 12.3 MB, less than 98.28% of C++ online submissions for Palindrome Linked List.
+// Success
+// Details 
+// Runtime: 20 ms, faster than 92.44% of C++ online submissions for Palindrome Linked List.
+// Memory Usage: 12.3 MB, less than 98.28% of C++ online submissions for Palindrome Linked List.
