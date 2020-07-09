@@ -1,4 +1,4 @@
-Easy
+// Easy
 
 // Given two binary strings, return their sum (also a binary string).
 
@@ -10,7 +10,7 @@ Easy
 
 // Example 2:
 // Input: a = "1010", b = "1011"
-Output: "10101"
+// Output: "10101"
  
 // Constraints:
 
