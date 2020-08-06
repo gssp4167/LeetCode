@@ -73,3 +73,40 @@ class Solution {
 // Details 
 // Runtime: 52 ms, faster than 13.52% of Java online submissions for Minimum Remove to Make Valid Parentheses.
 // Memory Usage: 52.3 MB, less than 5.08% of Java online submissions for Minimum Remove to Make Valid Parentheses.
+
+// #2 Two Parse String Builde
+class Solution {
+   private StringBuilder removeInvalidClosing(CharSequence string, char open, char close) {
+       StringBuilder sb = new StringBuilder();
+       int balance = 0;
+       
+       for (int i = 0; i < string.length(); i++) {
+           char c = string.charAt(i);
+           
+           if (c == open) {
+               balance++;
+           }
+           else if (c == close) {
+               if (balance == 0) {
+                   continue;
+               }
+               else {
+                   balance--;
+               }
+           }
+           sb.append(c);
+       }
+       return sb;
+   }
+    
+    public String minRemoveToMakeValid(String s) {
+        StringBuilder result = removeInvalidClosing(s, '(', ')');
+        result = removeInvalidClosing(result.reverse(), ')', '(');
+        return result.reverse().toString();
+    }
+}
+
+// Success
+// Details 
+// Runtime: 33 ms, faster than 31.19% of Java online submissions for Minimum Remove to Make Valid Parentheses.
+// Memory Usage: 47.8 MB, less than 5.08% of Java online submissions for Minimum Remove to Make Valid Parentheses.
