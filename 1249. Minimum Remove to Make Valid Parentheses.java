@@ -110,3 +110,51 @@ class Solution {
 // Details 
 // Runtime: 33 ms, faster than 31.19% of Java online submissions for Minimum Remove to Make Valid Parentheses.
 // Memory Usage: 47.8 MB, less than 5.08% of Java online submissions for Minimum Remove to Make Valid Parentheses.
+
+// #3Shortened Two Parse String Builder
+class Solution {
+   public String minRemoveToMakeValid(String s) {
+       int openSeen = 0, balance = 0;
+       StringBuilder sb = new StringBuilder();
+       StringBuilder result = new StringBuilder();
+       
+       for (int i = 0; i < s.length(); i++) {
+           char c = s.charAt(i);
+           if (c == '(') {
+               balance++;
+               openSeen++;
+           } 
+           else if (c == ')') {
+               if (balance == 0) {
+                   continue;
+               }
+               else {
+                   balance--;
+               }
+           }
+           sb.append(c);
+       }
+       
+       int openToKeep = openSeen - balance;
+       
+       for (int i = 0; i < sb.length(); i++) {
+           char c = sb.charAt(i);
+           
+           if (c == '(') {
+               if (openToKeep == 0) {
+                   continue;
+               }
+               else {
+                   openToKeep--;
+               }
+           }
+           result.append(c);        
+       }
+       return result.toString();
+   }
+}
+
+// Success
+// Details 
+// Runtime: 27 ms, faster than 40.99% of Java online submissions for Minimum Remove to Make Valid Parentheses.
+// Memory Usage: 48.1 MB, less than 5.08% of Java online submissions for Minimum Remove to Make Valid Parentheses.
