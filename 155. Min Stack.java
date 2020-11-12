@@ -123,7 +123,7 @@ class MinStack {
  * int param_4 = obj.getMin();
  */
 
-Success
-Details 
-Runtime: 4 ms, faster than 92.84% of Java online submissions for Min Stack.
-Memory Usage: 40.8 MB, less than 8.58% of Java online submissions for Min Stack.
+// Success
+// Details 
+// Runtime: 4 ms, faster than 92.84% of Java online submissions for Min Stack.
+// Memory Usage: 40.8 MB, less than 8.58% of Java online submissions for Min Stack.
