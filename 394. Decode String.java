@@ -30,7 +30,7 @@
 // s is guaranteed to be a valid input.
 // All the integers in s are in the range [1, 300].
 
-Solution #1
+// Solution #1
 class Solution {
     public String decodeString(String s) {
         Stack<Character> stack = new Stack<>();
