@@ -77,7 +77,7 @@ class Solution {
 // Runtime: 1 ms, faster than 62.33% of Java online submissions for Decode String.
 // Memory Usage: 36.7 MB, less than 97.79% of Java online submissions for Decode String.
 
-Solution #2
+// Solution #2
 class Solution {
     public String decodeString(String s) {
         Stack<StringBuilder> char_stack = new Stack<>();
@@ -112,7 +112,7 @@ class Solution {
     }
 }
 
-Success
-Details 
-Runtime: 0 ms, faster than 100.00% of Java online submissions for Decode String.
-Memory Usage: 37.2 MB, less than 52.68% of Java online submissions for Decode String.
+// Success
+// Details 
+// Runtime: 0 ms, faster than 100.00% of Java online submissions for Decode String.
+// Memory Usage: 37.2 MB, less than 52.68% of Java online submissions for Decode String.
