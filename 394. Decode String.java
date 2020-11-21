@@ -76,3 +76,43 @@ class Solution {
 // Details 
 // Runtime: 1 ms, faster than 62.33% of Java online submissions for Decode String.
 // Memory Usage: 36.7 MB, less than 97.79% of Java online submissions for Decode String.
+
+Solution #2
+class Solution {
+    public String decodeString(String s) {
+        Stack<StringBuilder> char_stack = new Stack<>();
+        Stack<Integer> int_stack = new Stack<>();
+        StringBuilder result = new StringBuilder();
+        int k = 0;
+        
+        for (char ch : s.toCharArray()) {
+            if (Character.isDigit(ch)) {
+                k = k * 10 + ch - '0';
+            }
+            else if (ch == '[') {
+                int_stack.push(k);
+                char_stack.push(result);
+                k = 0;
+                result = new StringBuilder();
+            }
+            else if (ch == ']') {
+                StringBuilder temp = new StringBuilder();
+                temp.append(char_stack.pop());
+                
+                for (int i = int_stack.pop(); i > 0; i--) {
+                    temp.append(result);
+                }
+                result = new StringBuilder(temp);              
+            }
+            else {
+                result.append(ch);
+            }
+        }
+        return result.toString();
+    }
+}
+
+Success
+Details 
+Runtime: 0 ms, faster than 100.00% of Java online submissions for Decode String.
+Memory Usage: 37.2 MB, less than 52.68% of Java online submissions for Decode String.
