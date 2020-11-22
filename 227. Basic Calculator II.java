@@ -65,3 +65,46 @@ class Solution {
 // Details 
 // Runtime: 20 ms, faster than 15.33% of Java online submissions for Basic Calculator II.
 // Memory Usage: 42.1 MB, less than 15.14% of Java online submissions for Basic Calculator II.
+
+// Solution #2
+class Solution {
+    public int calculate(String s) {
+        if (s == null || s.isEmpty()) {
+            return 0;
+        }
+        
+        int ans = 0, number = 0, last = 0;
+        int len = s.length();
+        char operator = '+';
+
+        for (int i = 0; i < len; i++) {
+            char cur_char = s.charAt(i);
+            
+            if (Character.isDigit(cur_char)) {
+                number = number * 10 + (cur_char - '0');
+            }
+            
+            if (!Character.isDigit(cur_char) && !Character.isSpace(cur_char) || i == len - 1) {
+                if (operator == '+' || operator == '-') {
+                    ans += last;
+                    last = operator == '+' ? number : -number;
+                }
+                else if (operator == '*') {
+                    last = last * number;
+                }
+                else if (operator == '/') {
+                    last = last / number;
+                }
+                operator = cur_char;
+                number = 0;
+            } 
+        }
+        ans += last;
+        return ans;
+    }
+}
+
+// Success
+// Details 
+// Runtime: 6 ms, faster than 92.92% of Java online submissions for Basic Calculator II.
+// Memory Usage: 38.8 MB, less than 96.14% of Java online submissions for Basic Calculator II.
