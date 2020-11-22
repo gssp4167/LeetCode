@@ -79,3 +79,22 @@ class Solution {
 // Details 
 // Runtime: 1 ms, faster than 61.94% of Java online submissions for Best Time to Buy and Sell Stock II.
 // Memory Usage: 38.5 MB, less than 77.11% of Java online submissions for Best Time to Buy and Sell Stock II.
+
+// Solution #3
+class Solution {
+    public int maxProfit(int[] prices) {
+        int profit = 0;
+        
+        for (int i = 1; i < prices.length; i++) {
+            if (prices[i] > prices[i - 1]) {
+                profit += prices[i] - prices[i - 1];
+            }
+        }
+        return profit;       
+    }
+}
+
+// Success
+// Details 
+// Runtime: 0 ms, faster than 100.00% of Java online submissions for Best Time to Buy and Sell Stock II.
+// Memory Usage: 39.1 MB, less than 14.77% of Java online submissions for Best Time to Buy and Sell Stock II.
