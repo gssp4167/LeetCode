@@ -53,3 +53,29 @@ class Solution {
 }
 
 // Time Limit Exceeded
+
+// Solution #2
+class Solution {
+    public int maxProfit(int[] prices) {
+        int i = 0, peak = 0, valley = 0, profit = 0;
+        
+        while (i < prices.length - 1) {
+            while (i < prices.length - 1 && prices[i] >= prices[i + 1]) {
+                i++;
+            }
+            valley = prices[i];
+            
+            while (i < prices.length - 1 && prices[i] <= prices[i + 1]) {
+                i++;
+            }
+            peak = prices[i];
+            profit += peak - valley;
+        }
+        return profit;       
+    }
+}
+
+// Success
+// Details 
+// Runtime: 1 ms, faster than 61.94% of Java online submissions for Best Time to Buy and Sell Stock II.
+// Memory Usage: 38.5 MB, less than 77.11% of Java online submissions for Best Time to Buy and Sell Stock II.
