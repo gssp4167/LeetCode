@@ -1,26 +1,26 @@
-Medium
+// Medium
 
-Implement a basic calculator to evaluate a simple expression string.
-The expression string contains only non-negative integers, +, -, *, / operators and empty spaces . 
-The integer division should truncate toward zero.
+// Implement a basic calculator to evaluate a simple expression string.
+// The expression string contains only non-negative integers, +, -, *, / operators and empty spaces . 
+// The integer division should truncate toward zero.
 
-Example 1:
-Input: "3+2*2"
-Output: 7
+// Example 1:
+// Input: "3+2*2"
+// Output: 7
 
-Example 2:
-Input: " 3/2 "
-Output: 1
+// Example 2:
+// Input: " 3/2 "
+// Output: 1
 
-Example 3:
-Input: " 3+5 / 2 "
-Output: 5
+// Example 3:
+// Input: " 3+5 / 2 "
+// Output: 5
 
-Note:
-You may assume that the given expression is always valid.
-Do not use the eval built-in library function.
+// Note:
+// You may assume that the given expression is always valid.
+// Do not use the eval built-in library function.
 
-Solution #1
+// Solution #1
 class Solution {
     public int calculate(String s) {
         Stack<Integer> stack = new Stack<Integer>();
@@ -61,7 +61,7 @@ class Solution {
     }
 }
 
-Success
-Details 
-Runtime: 20 ms, faster than 15.33% of Java online submissions for Basic Calculator II.
-Memory Usage: 42.1 MB, less than 15.14% of Java online submissions for Basic Calculator II.
+// Success
+// Details 
+// Runtime: 20 ms, faster than 15.33% of Java online submissions for Basic Calculator II.
+// Memory Usage: 42.1 MB, less than 15.14% of Java online submissions for Basic Calculator II.
