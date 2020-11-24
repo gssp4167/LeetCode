@@ -25,6 +25,7 @@
 // 0 <= t.length <= 10^4
 // Both strings consists only of lowercase characters.
 
+// Solution #1
 class Solution {
     public boolean isSubsequence(String s, String t) {
         int ini = 0, s_len = s.length(), t_len = t.length();
@@ -48,3 +49,44 @@ class Solution {
 // Details 
 // Runtime: 0 ms, faster than 100.00% of Java online submissions for Is Subsequence.
 // Memory Usage: 36.5 MB, less than 99.48% of Java online submissions for Is Subsequence.
+
+// Solution #2
+class Solution {
+    int s_len, t_len;
+    String src, tgt;
+    
+    private boolean recSubsequence(int s_index, int t_index) {
+        if (s_index == s_len) {
+            return true;
+        }
+        
+        if (t_index == t_len) {
+            return false;
+        }
+        
+        if (src.charAt(s_index) == tgt.charAt(t_index)) {
+            s_index++;
+            t_index++;
+        }
+        else {
+            t_index++;
+        }
+        return recSubsequence(s_index, t_index);
+    }
+    
+        
+    public boolean isSubsequence(String s, String t) {
+        this.s_len = s.length();
+        this.t_len = t.length();
+        this.src = s;
+        this.tgt = t;
+        
+        return recSubsequence(0, 0);
+    }
+}
+
+// Success
+// Details 
+// Runtime: 1 ms, faster than 76.36% of Java online submissions for Is Subsequence.
+// Memory Usage: 38.5 MB, less than 15.54% of Java online submissions for Is Subsequence.
+
