@@ -90,3 +90,26 @@ class Solution {
 // Runtime: 1 ms, faster than 76.36% of Java online submissions for Is Subsequence.
 // Memory Usage: 38.5 MB, less than 15.54% of Java online submissions for Is Subsequence.
 
+// Solution3
+class Solution {
+    public boolean isSubsequence(String s, String t) {
+        int s_len = s.length(), t_len = t.length();
+        int s_index = 0, t_index = 0;
+        
+        while (s_index < s_len && t_index < t_len) {
+            if (s.charAt(s_index) == t.charAt(t_index)) {
+                s_index++;
+                t_index++;
+            }
+            else {
+                t_index++;
+            }
+        }
+        return s_index == s_len;
+    }
+}
+
+// Success
+// Details 
+// Runtime: 0 ms, faster than 100.00% of Java online submissions for Is Subsequence.
+// Memory Usage: 37 MB, less than 44.50% of Java online submissions for Is Subsequence.
