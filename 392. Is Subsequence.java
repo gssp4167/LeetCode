@@ -90,7 +90,7 @@ class Solution {
 // Runtime: 1 ms, faster than 76.36% of Java online submissions for Is Subsequence.
 // Memory Usage: 38.5 MB, less than 15.54% of Java online submissions for Is Subsequence.
 
-// Solution3
+// Solution #3
 class Solution {
     public boolean isSubsequence(String s, String t) {
         int s_len = s.length(), t_len = t.length();
@@ -113,3 +113,52 @@ class Solution {
 // Details 
 // Runtime: 0 ms, faster than 100.00% of Java online submissions for Is Subsequence.
 // Memory Usage: 37 MB, less than 44.50% of Java online submissions for Is Subsequence.
+
+// Solution #4
+class Solution {
+    public boolean isSubsequence(String s, String t) {
+        HashMap<Character, List<Integer>> t_hash = new HashMap<>();
+        int match_order = -1;
+        
+        for (int i = 0; i < t.length(); i++) {
+            char ch = t.charAt(i);
+            
+            if (t_hash.containsKey(ch)) {
+                t_hash.get(ch).add(i);
+            }
+            else {
+                ArrayList<Integer> ch_list = new ArrayList<>();
+                ch_list.add(i);
+                t_hash.put(ch, ch_list);
+            }
+        }
+        
+        for (char letter : s.toCharArray()) {
+            boolean is_matched = false;
+            
+            if (!t_hash.containsKey(letter)) {
+                return false;
+            }
+            
+            for (int order : t_hash.get(letter)) {
+                if (match_order < order) {
+                    match_order = order;
+                    is_matched = true;
+                    break;
+                }
+                if (order == t.length() - 1) {
+                    return false;
+                }
+            }
+            if (!is_matched) {
+                return false;
+            }
+        }
+        return true;
+    }
+}
+
+// Success
+// Details 
+// Runtime: 7 ms, faster than 7.91% of Java online submissions for Is Subsequence.
+// Memory Usage: 38.6 MB, less than 12.98% of Java online submissions for Is Subsequence.
