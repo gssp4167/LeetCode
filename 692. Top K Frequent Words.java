@@ -22,7 +22,7 @@
 // Follow up:
 // Try to solve it in O(n log k) time and O(n) extra space.
 
-Solution #1
+// Solution #1
 class Solution {
     public List<String> topKFrequent(String[] words, int k) {
         Map<String, Integer> word_count = new HashMap<>();
