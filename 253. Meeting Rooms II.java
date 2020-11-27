@@ -42,3 +42,40 @@ class Solution {
 // Details 
 // Runtime: 8 ms, faster than 18.46% of Java online submissions for Meeting Rooms II.
 // Memory Usage: 38.7 MB, less than 84.21% of Java online submissions for Meeting Rooms II.
+
+// Solution #2
+class Solution {
+    public int minMeetingRooms(int[][] intervals) {
+        if (intervals.length == 0) {
+            return 0;
+        }
+        
+        int room = 1, e_ptr = 0;
+        int len = intervals.length;
+        int[] s_time = new int[len], e_time = new int[len];
+        
+        for (int i = 0; i < len; i++) {
+            s_time[i] = intervals[i][0];
+            e_time[i] = intervals[i][1];
+        }        
+        
+        Arrays.sort(s_time);
+        Arrays.sort(e_time);
+        
+        for (int s_ptr = 1; s_ptr < len; s_ptr++) {
+            if (s_time[s_ptr] >= e_time[e_ptr]) {
+                e_ptr++;
+            }
+            else {
+                room++;
+            }
+        }
+        return room;
+    }
+}
+
+// Success
+// Details 
+// Runtime: 3 ms, faster than 82.18% of Java online submissions for Meeting Rooms II.
+// Memory Usage: 41.7 MB, less than 5.06% of Java online submissions for Meeting Rooms II.
+// Next challenges:
