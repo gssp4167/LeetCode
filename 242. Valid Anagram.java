@@ -50,3 +50,28 @@ class Solution {
 // Details 
 // Runtime: 16 ms, faster than 10.48% of Java online submissions for Valid Anagram.
 // Memory Usage: 43.6 MB, less than 5.12% of Java online submissions for Valid Anagram.
+
+// Solution #2
+class Solution {
+    public boolean isAnagram(String s, String t) {
+        int lens = s.length(), lent = t.length();
+        
+        if (lens != lent) {
+            return false;
+        }
+        
+        char[] chars = s.toCharArray();
+        char[] chart = t.toCharArray();
+        
+        Arrays.sort(chars);
+        Arrays.sort(chart);
+        
+        return Arrays.equals(chars, chart);
+    }
+}
+
+// Success
+// Details 
+// Runtime: 2 ms, faster than 95.16% of Java online submissions for Valid Anagram.
+// Memory Usage: 39.1 MB, less than 80.79% of Java online submissions for Valid Anagram.
+
