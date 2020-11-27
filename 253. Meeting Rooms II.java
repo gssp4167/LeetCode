@@ -78,4 +78,3 @@ class Solution {
 // Details 
 // Runtime: 3 ms, faster than 82.18% of Java online submissions for Meeting Rooms II.
 // Memory Usage: 41.7 MB, less than 5.06% of Java online submissions for Meeting Rooms II.
-// Next challenges:
