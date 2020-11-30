@@ -38,7 +38,7 @@ class Solution {
         
         Arrays.sort(sorted_points);
         
-        int marker = sorted_points[K-1];
+        int marker = sorted_points[K - 1];
         int t = 0;
         
         for (int j = 0; j < len_points; ++j) {
