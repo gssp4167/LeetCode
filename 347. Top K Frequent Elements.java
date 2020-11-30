@@ -19,8 +19,14 @@
 // Solution #1
 class Solution {
     public int[] topKFrequent(int[] nums, int k) {
-        Map<Integer, Integer> hm = new HashMap<>();
         int len = nums.length;
+        
+        if (k == len) {
+            return nums;
+        }
+        
+        Map<Integer, Integer> hm = new HashMap<>();
+        
         
         for (int num : nums) {
             hm.put(num, hm.getOrDefault(num, 0) + 1);
@@ -51,4 +57,4 @@ class Solution {
 // Success
 // Details 
 // Runtime: 11 ms, faster than 39.68% of Java online submissions for Top K Frequent Elements.
-// Memory Usage: 41.4 MB, less than 78.11% of Java online submissions for Top K Frequent Elements.
+// Memory Usage: 41.5 MB, less than 64.46% of Java online submissions for Top K Frequent Elements.
