@@ -1,22 +1,22 @@
-Medium
+// Medium
 
-Given a string S, check if the letters can be rearranged so that two characters that are adjacent to each other are not the same.
+// Given a string S, check if the letters can be rearranged so that two characters that are adjacent to each other are not the same.
 
-If possible, output any possible result.  If not possible, return the empty string.
+// If possible, output any possible result.  If not possible, return the empty string.
 
-Example 1:
-Input: S = "aab"
-Output: "aba"
+// Example 1:
+// Input: S = "aab"
+// Output: "aba"
 
-Example 2:
-Input: S = "aaab"
-Output: ""
-Note:
+// Example 2:
+// Input: S = "aaab"
+// Output: ""
+// Note:
 
-S will consist of lowercase letters and have length in range [1, 500].
+// S will consist of lowercase letters and have length in range [1, 500].
 
-Solution #1
-This method is to sort the cnt array in ascending order and put the most common letter in position 0.
+// Solution #1
+// This method is to sort the cnt array in ascending order and put the most common letter in position 0.
 class Solution {
     public String reorganizeString(String S) {
         if (S == null || S.length() < 2) {
@@ -69,7 +69,7 @@ class Solution {
     }
 }
 
-Success
-Details 
-Runtime: 1 ms, faster than 83.45% of Java online submissions for Reorganize String.
-Memory Usage: 36.8 MB, less than 98.60% of Java online submissions for Reorganize String.
+// Success
+// Details 
+// Runtime: 1 ms, faster than 83.45% of Java online submissions for Reorganize String.
+// Memory Usage: 36.8 MB, less than 98.60% of Java online submissions for Reorganize String.
