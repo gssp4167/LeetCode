@@ -1,23 +1,23 @@
-Medium
+// Medium
 
-Given n, how many structurally unique BST's (binary search trees) that store values 1 ... n?
+// Given n, how many structurally unique BST's (binary search trees) that store values 1 ... n?
 
-Example:
-Input: 3
-Output: 5
+// Example:
+// Input: 3
+// Output: 5
 
-Explanation:
-Given n = 3, there are a total of 5 unique BST's:
+// Explanation:
+// Given n = 3, there are a total of 5 unique BST's:
 
-   1         3     3      2      1
-    \       /     /      / \      \
-     3     2     1      1   3      2
-    /     /       \                 \
-   2     1         2                 3
+//    1         3     3      2      1
+//     \       /     /      / \      \
+//      3     2     1      1   3      2
+//     /     /       \                 \
+//    2     1         2                 3
  
 
-Constraints:
-1 <= n <= 19
+// Constraints:
+// 1 <= n <= 19
 
 class Solution {
     public int numTrees(int n) {
@@ -34,7 +34,7 @@ class Solution {
     }
 }
 
-Success
-Details 
-Runtime: 0 ms, faster than 100.00% of Java online submissions for Unique Binary Search Trees.
-Memory Usage: 35.7 MB, less than 65.74% of Java online submissions for Unique Binary Search Trees.
+// Success
+// Details 
+// Runtime: 0 ms, faster than 100.00% of Java online submissions for Unique Binary Search Trees.
+// Memory Usage: 35.7 MB, less than 65.74% of Java online submissions for Unique Binary Search Trees.
