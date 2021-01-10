@@ -45,3 +45,8 @@ class Solution {
         return ans.toString();     
     }
 }
+
+// Success
+// Details 
+// Runtime: 2 ms, faster than 91.59% of Java online submissions for Add Strings.
+// Memory Usage: 39.5 MB, less than 15.27% of Java online submissions for Add Strings.
