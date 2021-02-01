@@ -48,3 +48,34 @@ class Solution {
 // Details 
 // Runtime: 3 ms, faster than 40.92% of Java online submissions for Intersection of Two Arrays.
 // Memory Usage: 41 MB, less than 6.35% of Java online submissions for Intersection of Two Arrays.
+
+class Solution {
+    public int[] intersection(int[] nums1, int[] nums2) {
+        HashSet<Integer> set1 = new HashSet<>();
+        HashSet<Integer> set2 = new HashSet<>();
+        
+        for (int num : nums1) {
+            set1.add(num);
+        }
+        
+        for (int num : nums2) {
+            set2.add(num);
+        }
+        
+        set1.retainAll(set2);
+        
+        int[] ans = new int[set1.size()];
+        int i = 0;
+        
+        for (int num : set1) {
+            ans[i++] = num;
+        }
+        
+        return ans;
+    }
+}
+
+// Success
+// Details 
+// Runtime: 2 ms, faster than 97.32% of Java online submissions for Intersection of Two Arrays.
+// Memory Usage: 39.2 MB, less than 53.52% of Java online submissions for Intersection of Two Arrays.
