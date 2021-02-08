@@ -1,22 +1,22 @@
-Easy
+// Easy
 
-Given a non-empty binary search tree and a target value, 
-find the value in the BST that is closest to the target.
+// Given a non-empty binary search tree and a target value, 
+// find the value in the BST that is closest to the target.
 
-Note:
-Given target value is a floating point.
-You are guaranteed to have only one unique value in the BST that is closest to the target.
+// Note:
+// Given target value is a floating point.
+// You are guaranteed to have only one unique value in the BST that is closest to the target.
 
-Example:
-Input: root = [4,2,5,1,3], target = 3.714286
+// Example:
+// Input: root = [4,2,5,1,3], target = 3.714286
 
-    4
-   / \
-  2   5
- / \
-1   3
+//     4
+//    / \
+//   2   5
+//  / \
+// 1   3
 
-Output: 4
+// Output: 4
 
 /**
  * Definition for a binary tree node.
@@ -59,6 +59,6 @@ class Solution {
     }
 }
 
-Details 
-Runtime: 0 ms, faster than 100.00% of Java online submissions for Closest Binary Search Tree Value.
-Memory Usage: 38.7 MB, less than 76.45% of Java online submissions for Closest Binary Search Tree Value.
+// Details 
+// Runtime: 0 ms, faster than 100.00% of Java online submissions for Closest Binary Search Tree Value.
+// Memory Usage: 38.7 MB, less than 76.45% of Java online submissions for Closest Binary Search Tree Value.
